@@ -15,8 +15,8 @@
     "go-pc",
     "go-pc-build"
   ],
-  "author": "Arthurdw",
-  "license": "MIT",
+  "author": "GO-PC Build",
+  "license": "CCO 1.0",
   "bugs": {
     "url": "https://github.com/GO-PC-Build/Backend/issues"
   },
