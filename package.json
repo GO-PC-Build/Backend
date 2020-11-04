@@ -1,0 +1,35 @@
+{
+  "name": "go-pc-build-backend",
+  "version": "0.1.0",
+  "description": "The API that handles the GO-PC ecosystem ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GO-PC-Build/Backend.git"
+  },
+  "keywords": [
+    "backend",
+    "go-pc",
+    "go-pc-build"
+  ],
+  "author": "Arthurdw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GO-PC-Build/Backend/issues"
+  },
+  "homepage": "https://github.com/GO-PC-Build/Backend#readme",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
