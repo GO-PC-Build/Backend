@@ -23,8 +23,8 @@ router.post("/register", async (req, res) => {
 
   //   Create new user
   const user = new User({
-    name: req.body.name,
-    email: req.body.email,
+    name: req.body.name.toLowerCase(),
+    email: req.body.email.toLowerCase(),
     password: hashedPassword,
   });
 
@@ -43,8 +43,8 @@ router.post("/login", async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   // Check if user exists
-  const nameExists = await User.findOne({ name: req.body.name });
-  const emailExists = await User.findOne({ email: req.body.name });
+  const nameExists = await User.findOne({ name: req.body.name.toLowerCase() });
+  const emailExists = await User.findOne({ email: req.body.name.toLowerCase() });
 
   const user =
     nameExists || emailExists ? (nameExists ? nameExists : emailExists) : null;

@@ -26,6 +26,16 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  avatar: {
+    type: String,
+    required: true,
+    default: `https://eco.xiler.net/images/defaultProfilePicture.png`,
+    max: 512
+  },
+  discord: {
+    type: String,
+    required: false
+  }
 });
 
 module.exports = mongoose.model("User", userSchema);

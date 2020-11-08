@@ -6,8 +6,16 @@ const User = require("../model/User");
 const verify = require("../utils/verifyToken");
 
 router.get("/", verify, async (req, res) => {
-  const { _id, name, email } = await User.findOne({ _id: req.user });
-  return res.send({ id: _id, name: name, mail: email });
+  try {
+    const { _id, name, email, avatar, discord, date } = await User.findById(req.user);
+    return res.send({ id: _id, name, email, avatar, discord, date });
+  } catch (err) {
+    return res
+      .status(500)
+      .send(
+        "Oops, something went wrong while trying to process your request.\r\nPlease contact the administrator (@Arthurdw|Arthur#0002)!"
+      );
+  }
 });
 
 module.exports = router;

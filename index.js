@@ -13,6 +13,7 @@ const BASE = "/api/";
 // Routes
 const authRoute = require("./routes/auth");
 const meRoute = require("./routes/me");
+const updateRoute = require("./routes/update");
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ app.use(express.json());
 // Route Middleware
 app.use(`${BASE}user`, authRoute);
 app.use(`${BASE}@me`, meRoute);
+app.use(`${BASE}user`, updateRoute);
 
 app.listen(PORT, () =>
   console.log(`Server is up and running on port ${PORT}!`)
