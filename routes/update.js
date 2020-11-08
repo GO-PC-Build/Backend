@@ -13,7 +13,6 @@ router.post("/update", verify, async (req, res) => {
     return res.status(400).send("Invalid provided data.");
 
   const base = await User.findOne(res.user);
-  console.log(base);
 
   const update = await User.updateOne(
     { _id: req.user._id },
@@ -25,8 +24,13 @@ router.post("/update", verify, async (req, res) => {
     }
   );
 
-  console.log(update.n);
-  res.send({ name, email, avatar, discord });
+  if (update.n >= 1)
+    return res.status(201).send(`Successfully changed values for ${base.name}`);
+  return res
+    .status(500)
+    .send(
+      "Oops, something went wrong while trying to process your request.\r\nPlease contact the administrator (@Arthurdw|Arthur#0002)!"
+    );
 });
 
 // router.post("/login", verify, async (req, res) => {
