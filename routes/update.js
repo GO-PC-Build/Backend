@@ -33,7 +33,4 @@ router.post("/update", verify, async (req, res) => {
     );
 });
 
-// router.post("/login", verify, async (req, res) => {
-// });
-
 module.exports = router;

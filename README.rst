@@ -47,11 +47,16 @@ Voel je vrij om ons in `onze discord`_ ons te contacteren!
 
 .. _`onze discord`: https://pc.go-ao.be/discord
 
+Basis Route
+===========
+`/go-pc-build/api` *(aanpasbaar in `index.js`)*
+
 Routes
 ========
-- **Register** ``/api/user/register``
-- **Login** ``/api/user/login`` *(JWT)*
-- **Account** ``/api/@me`` *(JWT)*
+- **Register** ``/user/register``
+- **Login** ``/user/login`` *(JWT)*
+- **Login** ``/user/login`` *(JWT)*
+- **Account** ``/@me`` *(JWT)*
 
 Licentie
 ========
