@@ -1,4 +1,4 @@
-// ©GO-PC Build
+// Â©GO-PC Build
 // This project is under a CC0-1.0 License
 // (View the license here: https://github.com/GO-PC-Build/DiscordBot/blob/master/LICENSE)
 const express = require("express");
@@ -7,8 +7,8 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 var cors = require("cors");
 
-const PORT = 8080;
-const BASE = "/go-pc-build/api/";
+const PORT = 25578;
+const BASE = "/";
 
 // Routes
 const authRoute = require("./routes/auth");
@@ -33,7 +33,7 @@ app.use(cors());
 app.use(`${BASE}user`, authRoute);
 app.use(`${BASE}user`, updateRoute);
 app.use(`${BASE}@me`, meRoute);
-app.use(`${BASE}mail`, mailRoute);
+// app.use(`${BASE}mail`, mailRoute);
 
 app.listen(PORT, () =>
   console.log(`Server is up and running on port ${PORT}! (base route ${BASE})`)
